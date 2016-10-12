@@ -11,6 +11,7 @@ gem 'pg'
 gem 'sprockets'
 gem 'pry'
 gem 'hirb'
+gem 'bcrypt'
 
 group :development do
   gem 'shotgun'

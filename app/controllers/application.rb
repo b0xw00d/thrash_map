@@ -1,3 +1,3 @@
 get "/" do
-  haml :index
+  haml :"spots/index"
 end
