@@ -1,2 +1,2 @@
-# Sinatra Box
-Sinatra Box is a basic Sinatra MVC starter template.
+# ThrashMap
+ThrashMap is a web application for finding and keeping track of your favorite skate spots.
