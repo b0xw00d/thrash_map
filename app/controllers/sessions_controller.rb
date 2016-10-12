@@ -1,4 +1,5 @@
 enable :sessions
+use Rack::Flash
 
 get "/sessions/new" do
   haml :'sessions/new'
@@ -11,6 +12,7 @@ post "/sessions/create" do
     session[:user_id] = user.id
     redirect "/"
   else
+    flash.now[:notice] = "Invalid email or password!"
     haml :'sessions/new'
   end
 end

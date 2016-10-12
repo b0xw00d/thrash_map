@@ -12,6 +12,7 @@ gem 'sprockets'
 gem 'pry'
 gem 'hirb'
 gem 'bcrypt'
+gem 'rack-flash3'
 
 group :development do
   gem 'shotgun'

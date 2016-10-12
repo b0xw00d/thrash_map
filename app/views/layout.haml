@@ -8,4 +8,8 @@
     %script{ src: "/assets/javascripts/application.js" }
     %title= APP_NAME.camelize
   %body
+    .error
+      - [:error,:notice].each do |key|
+        = flash[key]
+
     = yield

@@ -3,6 +3,7 @@ require 'bundler'
 require 'pathname'
 require 'active_record'
 require 'active_support/core_ext'
+require 'rack-flash'
 
 Bundler.require
 
