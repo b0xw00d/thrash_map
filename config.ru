@@ -1,5 +1,4 @@
 require ::File.expand_path('../config/environment.rb',  __FILE__)
-require './config/sprockets_config.rb'
 
 set :app_file, __FILE__
 
@@ -9,4 +8,6 @@ unless ENV['RACK_ENV'] == 'production'
   end
 end
 
-run Sinatra::Application
+map('/') { run ApplicationController }
+map('/users') { run UsersController }
+map('/sessions') { run SessionsController }
