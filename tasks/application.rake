@@ -1,6 +1,7 @@
 desc 'Run the app'
 task :server do
-  system "shotgun"
+  puts "[34mrunning puma server on port 9292...[0m"
+  system "rerun 'puma config.ru'"
 end
 
 desc 'Start pry with application environment loaded'
