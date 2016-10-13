@@ -2,10 +2,10 @@
   %form{ action: "create", method: "post", autocomplete: "on" }
     %h1 Signup
     %p
-      %label.uname{ for: "email" } email:
+      %label.user-email{ for: "email" } email:
       %input#email{ name: "user[email]", required: "required", :type => "text" }
     %p
-      %label.youpasswd{ for: "password" } password:
+      %label.user-password{ for: "password" } password:
       %input#password{ name: "user[password]", required: "required", type: "password" }
     %p.login.button
       %input{ type: "submit", value: "Signup" }
