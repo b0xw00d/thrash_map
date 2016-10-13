@@ -1,13 +1,15 @@
 class SessionsController < ApplicationController
+  before do
+    authenticate_user
+  end
+
   get "/new" do
     haml :'sessions/new'
   end
 
   post "/create" do
-    user = User.authenticate(params[:user][:email], params[:user][:password])
-
-    if user
-      session[:user_id] = user.id
+    if @user
+      session[:user_id] = @user.id
       redirect "/", notice: "Logged in!"
     else
       flash.now[:notice] = "Invalid email or password!"
@@ -18,5 +20,12 @@ class SessionsController < ApplicationController
   get "/destroy" do
     session[:user_id] = nil
     redirect "/sessions/new"
+  end
+
+  private
+
+  def authenticate_user
+    return unless %w(create).include? request.path_info.split('/')[1]
+    @user = User.authenticate(params[:user][:email], params[:user][:password])
   end
 end
