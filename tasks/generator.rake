@@ -70,7 +70,7 @@ namespace :generate do
         f.write(<<-EOF.strip_heredoc)
           require_relative "../spec_helper.rb"
 
-          describe #{name} do
+          describe #{name}, type: :model do
             xit "add some examples"
           end
         EOF
