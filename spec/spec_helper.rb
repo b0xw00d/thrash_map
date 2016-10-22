@@ -6,6 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 
 require 'rack/test'
 require 'database_cleaner'
+require 'shoulda-matchers'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
@@ -39,6 +40,10 @@ if defined? RSpec::Core::Formatters::ProgressFormatter
   end
 end
 
-def app
-  Sinatra::Application
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :active_record
+    with.library :active_model
+  end
 end

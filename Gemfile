@@ -21,4 +21,5 @@ group :test do
   gem 'database_cleaner'
   gem 'rack-test'
   gem 'rspec'
+  gem 'shoulda-matchers', '~> 3.1'
 end
