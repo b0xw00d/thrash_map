@@ -16,6 +16,7 @@ gem 'hirb'
 gem 'bcrypt'
 gem 'rack-flash3'
 gem 'sinatra-redirect-with-flash'
+gem 'rubocop', require: false
 
 group :test do
   gem 'database_cleaner'

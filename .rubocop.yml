@@ -1,0 +1,41 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/*
+    - tasks/*
+
+Style/BlockDelimiters:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+
+Metrics/BlockNesting:
+  Max: 2
+
+Metrics/MethodLength:
+  Max: 7
+
+Metrics/ParameterLists:
+  Max: 3
+
+# don't enforce single or double-quotes
+Style/StringLiterals:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Style/ExtraSpacing:
+  Enabled: true
+  ForceEqualSignAlignment: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# C: missing top-level module documentation comment
+Style/Documentation:
+  Enabled: false
+
+# never liked this cop
+Style/SingleLineBlockParams:
+  Enabled: false
