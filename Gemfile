@@ -18,6 +18,11 @@ gem 'rack-flash3'
 gem 'sinatra-redirect-with-flash'
 gem 'rubocop', require: false
 
+group :development do
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop'
+end
+
 group :test do
   gem 'database_cleaner'
   gem 'rack-test'
