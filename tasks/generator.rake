@@ -1,5 +1,5 @@
 namespace :generate do
-  desc "Create an empty model in app/models, e.g., rake generate:model NAME=User"
+  desc "Create an empty model in app/models, e.g. rake generate:model NAME=User"
   task :model do
     unless ENV.has_key?('NAME')
       raise "Must specificy model name, e.g., rake generate:model NAME=User"
@@ -17,16 +17,16 @@ namespace :generate do
     File.open(model_path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
         class #{model_name} < ActiveRecord::Base
-          # Remember to create a migration!
         end
       EOF
     end
   end
 
-  desc "Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks"
+  desc "Create with rake generate:migration NAME=create_tasks"
   task :migration do
     unless ENV.has_key?('NAME')
-      raise "Must specificy migration name, e.g., rake generate:migration NAME=create_tasks"
+      raise "Must specificy migration name, " +
+        "e.g. rake generate:migration NAME=create_tasks"
     end
 
     name     = ENV['NAME'].camelize
@@ -48,29 +48,61 @@ namespace :generate do
     end
   end
 
-  desc "Create an empty model spec in spec, e.g., rake generate:spec NAME=user"
-  task :spec do
-    unless ENV.has_key?('NAME')
-      raise "Must specificy migration name, e.g., rake generate:spec NAME=user"
+  namespace :spec do
+    desc "Create an empty model spec in spec, " +
+      " e.g. rake generate:spec:model NAME=user"
+    task :model do
+      unless ENV.has_key?('NAME')
+        raise "Must specificy class name, " +
+          " e.g. rake generate:spec:model NAME=user"
+      end
+
+      name     = ENV['NAME'].camelize
+      filename = "%s_spec.rb" % ENV['NAME'].underscore
+      path     = APP_ROOT.join('spec', 'models', filename)
+
+      if File.exist?(path)
+        raise "ERROR: File '#{path}' already exists"
+      end
+
+      puts "Creating #{path}"
+      File.open(path, 'w+') do |f|
+        f.write(<<-EOF.strip_heredoc)
+          require_relative "../spec_helper.rb"
+
+          describe #{name} do
+            xit "add some examples"
+          end
+        EOF
+      end
     end
 
-    name     = ENV['NAME'].camelize
-    filename = "%s_spec.rb" % ENV['NAME'].underscore
-    path     = APP_ROOT.join('spec', filename)
+    desc "Create an empty controller spec in spec, " +
+      "e.g. rake generate:spec:controller NAME=users_controller"
+    task :controller do
+      unless ENV.has_key?('NAME')
+        raise "Must specificy class name, " +
+          " e.g. rake generate:spec:controller NAME=users_controller"
+      end
 
-    if File.exist?(path)
-      raise "ERROR: File '#{path}' already exists"
-    end
+      name     = ENV['NAME'].camelize
+      filename = "%s_spec.rb" % ENV['NAME'].underscore
+      path     = APP_ROOT.join('spec', 'controllers', filename)
 
-    puts "Creating #{path}"
-    File.open(path, 'w+') do |f|
-      f.write(<<-EOF.strip_heredoc)
-        require 'spec_helper'
+      if File.exist?(path)
+        raise "ERROR: File '#{path}' already exists"
+      end
 
-        describe #{name} do
-          pending "add some examples to (or delete) #{__FILE__}"
-        end
-      EOF
+      puts "Creating #{path}"
+      File.open(path, 'w+') do |f|
+        f.write(<<-EOF.strip_heredoc)
+          require_relative "../spec_helper.rb"
+
+          describe #{name} do
+            xit "add some examples"
+          end
+        EOF
+      end
     end
   end
 end
