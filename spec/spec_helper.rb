@@ -24,7 +24,7 @@ end
 
 if defined? RSpec::Core::Formatters::ProgressFormatter
   RSpec::Core::Formatters::ProgressFormatter.class_eval do
-    DOTS = ["✅ ", "⚠️ ", "❌ "]
+    DOTS = ["✅ ", "⚠️ ", "❌ "].freeze
 
     def example_passed(_example)
       output.print DOTS[0]
