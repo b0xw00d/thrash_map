@@ -17,6 +17,8 @@ gem 'bcrypt'
 gem 'rack-flash3'
 gem 'sinatra-redirect-with-flash'
 gem 'rubocop', require: false
+gem 'coffee-script'
+gem 'geocoder'
 
 group :development do
   gem 'guard-rspec', require: false

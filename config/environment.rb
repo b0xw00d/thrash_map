@@ -7,6 +7,10 @@ require 'active_support/core_ext'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 require './config/sprockets_config.rb'
+require 'geocoder'
+require "geocoder/railtie"
+
+Geocoder::Railtie.insert
 
 Bundler.require
 
