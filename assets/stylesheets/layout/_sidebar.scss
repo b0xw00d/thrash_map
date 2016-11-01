@@ -9,10 +9,10 @@
     .sidebar-header {
         @include flex(row, center);
         align-items: center;
-        background-color: $hover-green;
+        background-color: $white;
         border-bottom: 1px solid $gray-4;
         color: $dk-blue;
-        font-size: 22px;
+        font-size: 23px;
         font-weight: bolder;
         height: $sidebar-item-height;
         position: fixed;
@@ -32,12 +32,16 @@
                 align-items: flex-start;
                 border-bottom: 1px solid $gray-4;
                 color: $gray-9;
+                font-size: 14px;
                 height: $sidebar-item-height;
-                padding: 20px;
+                padding: 15px;
+                padding-bottom: 0;
 
                 a {
                     color: $gray-9;
+                    font-size: 17px;
                     font-weight: bolder;
+                    text-decoration: none;
                 }
 
                 &:hover {

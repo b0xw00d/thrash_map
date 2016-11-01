@@ -24,7 +24,7 @@ var MAP_STYLES = [
         "elementType": "geometry.fill",
         "stylers": [{ "color": "#E6F3D6" },
                     { "visibility": "on" },
-                    { "lightness": 10 }]
+                    { "lightness": 35 }]
     },
     {
         "featureType": "road",
