@@ -5,6 +5,6 @@ class ApplicationController < Sinatra::Base
   helpers Sinatra::RedirectWithFlash
 
   get "/" do
-    haml :'spots/index'
+    redirect "/skatespots"
   end
 end

@@ -10,9 +10,9 @@ require './config/sprockets_config.rb'
 require 'geocoder'
 require "geocoder/railtie"
 
-Geocoder::Railtie.insert
-
 Bundler.require
+
+Geocoder::Railtie.insert
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
