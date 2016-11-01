@@ -8,6 +8,9 @@
     %script{ src: "/assets/javascripts/application.js" }
     %title= APP_NAME.camelize
   %body
+    %nav
+      = haml :'partials/_navbar'
+
     .error
       - [:error,:notice].each do |key|
         = flash[key]
