@@ -23,3 +23,21 @@ Skatespot.create(title: "NBC Tower",
                  city: "Chicago",
                  state: "IL",
                  zip: "60611")
+
+Skatespot.create(title: "Roberto Clemente High School",
+                 address: "1147 N Western Ave",
+                 city: "Chicago",
+                 state: "IL",
+                 zip: "60622")
+
+Skatespot.create(title: "Wilson Skatepark",
+                 address: "4646 N Marine Dr",
+                 city: "Chicago",
+                 state: "IL",
+                 zip: "60640")
+
+Skatespot.create(title: "Little Village Skatepark",
+                 address: "4325 W 31st St",
+                 city: "Chicago",
+                 state: "IL",
+                 zip: "60623")
