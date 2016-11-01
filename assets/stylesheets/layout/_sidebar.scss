@@ -1,0 +1,52 @@
+.sidebar {
+    background-color: $white;
+    border-right: 1px solid $gray-4;
+    position: fixed;
+    overflow: auto;
+    max-height: 100%;
+    width: $sidebar-width;
+
+    .sidebar-header {
+        @include flex(row, center);
+        align-items: center;
+        background-color: $hover-green;
+        border-bottom: 1px solid $gray-4;
+        color: $dk-blue;
+        font-size: 22px;
+        font-weight: bolder;
+        height: $sidebar-item-height;
+        position: fixed;
+        width: $sidebar-width;
+    }
+
+    .skatespots {
+        margin-top: $sidebar-item-height;
+
+        ul {
+            margin: 0;
+            margin-bottom: 90px;
+            padding-left: 0;
+
+            .sidebar-item {
+                @include flex(column, flex-start);
+                align-items: flex-start;
+                border-bottom: 1px solid $gray-4;
+                color: $gray-9;
+                height: $sidebar-item-height;
+                padding: 20px;
+
+                a {
+                    color: $gray-9;
+                    font-weight: bolder;
+                }
+
+                &:hover {
+                    background-color: $hover-green;
+                    cursor: pointer;
+
+                    a { color: $dk-blue; }
+                }
+            }
+        }
+    }
+}
