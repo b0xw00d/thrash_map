@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   post "/create" do
     if @user
       session[:user_id] = @user.id
-      redirect "/", notice: "Logged in!"
+      redirect "/"
     else
       flash.now[:notice] = "Invalid email or password!"
       haml :'sessions/new'

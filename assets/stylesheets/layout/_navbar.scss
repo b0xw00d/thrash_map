@@ -20,7 +20,7 @@
     .logo {
         @include flex(row, center);
         align-items: center;
-        background-color: $blue;
+        background-color: $orange;
         height: 60px;
         width: 75px;
 
@@ -33,7 +33,7 @@
     }
 
     .navbar-item {
-        background-color: $blue;
+        background-color: $orange;
         padding: 10px;
 
         &:hover { opacity: 0.8; }
