@@ -1,8 +1,8 @@
 function initMap() {
     var mapCanvas  = $("#map");
     var skatespots = mapCanvas.data("skatespots");
-    var mapCenter  = new google.maps.LatLng(41.9499835, -87.7807218);
-    var map        = buildMap(11, mapCenter, MAP_STYLES);
+    var mapCenter  = new google.maps.LatLng(41.9026168, -87.6861295);
+    var map        = buildMap(12, mapCenter, MAP_STYLES);
 
     dropMarkers(skatespots, map);
 }
