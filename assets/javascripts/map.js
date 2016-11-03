@@ -1,6 +1,5 @@
 function initMap() {
-    var mapCanvas  = $("#map");
-    var skatespots = mapCanvas.data("skatespots");
+    var skatespots = $("#map").data("skatespots");
     var mapCenter  = new google.maps.LatLng(41.9026168, -87.6861295);
     var map        = buildMap(12, mapCenter, MAP_STYLES);
 
@@ -25,12 +24,13 @@ var buildMarker = function(position, map, icon) {
 }
 
 var buildInfoWindow = function(skatespot, map, marker) {
-    var spotInfo = new google.maps.InfoWindow();
-    var content  = '<h3 class="info-title">' +skatespot.title+ '</h3>' +
-                   '<p>' + skatespot.address +
-                   '</br>' + skatespot.city + ', ' + skatespot.state +
-                   '</br>' + skatespot.zip + '</p>'
+    var content = '<h3 class="info-title">' + skatespot.title + '</h3>' +
+                  '<p>' + skatespot.address +
+                      '</br>' + skatespot.city + ', ' + skatespot.state +
+                      '</br>' + skatespot.zip +
+                  '</p>'
 
+    var spotInfo = new google.maps.InfoWindow();
     spotInfo.setContent(content);
 
     marker.addListener('click', function() {
@@ -39,9 +39,10 @@ var buildInfoWindow = function(skatespot, map, marker) {
 }
 
 var dropMarkers = function(skatespots, map) {
-    for(i=0; i < skatespots.length; i++) {
-        var latLng = new google.maps.LatLng(parseFloat(skatespots[i].latitude),
-        parseFloat(skatespots[i].longitude));
+    for(var i = 0; i < skatespots.length; i++) {
+        var lat    = parseFloat(skatespots[i].latitude);
+        var long   = parseFloat(skatespots[i].longitude);
+        var latLng = new google.maps.LatLng(lat, long);
 
         var marker = buildMarker(latLng, map, MAP_ICON_ORANGE);
 
