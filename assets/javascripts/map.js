@@ -25,9 +25,10 @@ var buildMarker = function(position, map, icon) {
 
 var buildInfoWindow = function(skatespot, map, marker) {
     var content = '<h3 class="info-title">' + skatespot.title + '</h3>' +
-                  '<p>' + skatespot.address +
-                      '</br>' + skatespot.city + ', ' + skatespot.state +
-                      '</br>' + skatespot.zip +
+                  '<p>' +
+                       skatespot.address + '</br>' +
+                       skatespot.city + ', ' + skatespot.state + '</br>' +
+                       skatespot.zip +
                   '</p>'
 
     var spotInfo = new google.maps.InfoWindow();
