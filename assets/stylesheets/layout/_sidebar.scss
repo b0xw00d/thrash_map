@@ -9,9 +9,9 @@
     .sidebar-header {
         @include flex(row, center);
         align-items: center;
-        background-color: $white;
+        background-color: $dk-blue;
         border-bottom: 1px solid $gray-4;
-        color: $dk-blue;
+        color: $white;
         font-size: 23px;
         font-weight: bolder;
         height: $sidebar-item-height;

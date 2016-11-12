@@ -6,6 +6,7 @@
 .navbar {
     @include flex(row, space-between);
     @include shadow;
+    align-items: center;
     background-color: $gray-13;
     height: 80px;
 }
@@ -21,7 +22,7 @@
         @include flex(row, center);
         align-items: center;
         background-color: $orange;
-        height: 60px;
+        height: 50px;
         width: 75px;
 
         &:hover { opacity: 0.8; }
