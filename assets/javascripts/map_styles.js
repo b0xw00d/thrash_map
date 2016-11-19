@@ -24,13 +24,13 @@ var MAP_STYLES = [
         "elementType": "geometry.fill",
         "stylers": [{ "color": "#E6F3D6" },
                     { "visibility": "on" },
-                    { "lightness": 35 }]
+                    { "lightness": 25 }]
     },
     {
         "featureType": "road",
         "elementType": "all",
         "stylers": [{ "saturation": -100 },
-                    { "lightness": 45 },
+                    { "lightness": 35 },
                     { "visibility": "simplified" }]
     },
     {
@@ -43,7 +43,7 @@ var MAP_STYLES = [
         "elementType": "geometry.fill",
         "stylers": [{ "color": "#F4D2C5" },
                     { "visibility": "simplified" },
-                    { "lightness": 40 }]
+                    { "lightness": 35 }]
     },
     {
         "featureType": "road.highway",
