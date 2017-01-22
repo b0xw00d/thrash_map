@@ -1,9 +1,6 @@
 .navbar
   .navbar-section
-    .logo
-      %a{ href: "/" } LOGO
+    %a{ href: "/", class: "logo" } LOGO
   .navbar-section
-    .navbar-item
-      %a{ href: "/" } about
-    .navbar-item
-      %a{ href: "/sessions/destroy" } logout
+    %a{ href: "/", class: "navbar-item" } about
+    %a{ href: "/sessions/destroy", class: "navbar-item" } logout
