@@ -1,3 +1,6 @@
+var markers = [];
+var infoWindows = [];
+
 function initMap() {
     var skatespots = $("#map").data("skatespots");
     var mapCenter  = new google.maps.LatLng(41.9026168, -87.6861295);
@@ -37,6 +40,8 @@ var buildInfoWindow = function(skatespot, map, marker) {
     marker.addListener('click', function() {
         spotInfo.open(map, marker);
     });
+
+    return spotInfo;
 }
 
 var dropMarkers = function(skatespots, map) {
@@ -46,7 +51,9 @@ var dropMarkers = function(skatespots, map) {
         var latLng = new google.maps.LatLng(lat, long);
 
         var marker = buildMarker(latLng, map, MAP_ICON_ORANGE);
+        markers.push(marker);
 
-        buildInfoWindow(skatespots[i], map, marker);
+        var infoWindow = buildInfoWindow(skatespots[i], map, marker);
+        infoWindows.push(infoWindow);
     }
 }

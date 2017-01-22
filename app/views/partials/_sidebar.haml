@@ -1,7 +1,5 @@
 .sidebar
-  .sidebar-header
-    Chicago Skatespots
   .skatespots
     %ul
-      - @spots.each do |spot|
-        = haml :'partials/_sidebar_item', locals: { spot: spot }
+      - @spots.each_with_index do |spot, idx|
+        = haml :'partials/_sidebar_item', locals: { spot: spot, idx: idx }
