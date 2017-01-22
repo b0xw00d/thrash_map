@@ -144,6 +144,7 @@ DEPENDENCIES
   rack-flash3
   rack-test
   rake
+  rb-fsevent
   rerun
   rspec
   rubocop
