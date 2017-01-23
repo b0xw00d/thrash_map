@@ -1,0 +1,13 @@
+.login-container {
+    @include flex(center, center);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    #login.form {
+        margin-top: 100px;
+
+        h1 { color: $dk-blue; }
+    }
+}
