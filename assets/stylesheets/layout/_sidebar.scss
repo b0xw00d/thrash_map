@@ -16,6 +16,7 @@
             align-items: flex-start;
             border-bottom: 1px solid $gray-4;
             color: $gray-9;
+            cursor: pointer;
             font-size: 14px;
             height: $sidebar-item-height;
             padding: 15px;
@@ -28,14 +29,10 @@
                 text-decoration: none;
             }
 
-            &:hover {
-                background-color: $gray-2;
-                cursor: pointer;
-            }
+            &:hover { background-color: $gray-2; }
 
             &.clicked {
                 background-color: $clicked-green;
-                cursor: pointer;
 
                 a { color: $dk-blue; }
             }
